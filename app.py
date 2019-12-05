@@ -1,9 +1,10 @@
 from flask import Flask
 
 from models import db, Men
-from routes import api
+from routes import api, index
 
 app = Flask(__name__)
+app.register_blueprint(index)
 app.register_blueprint(api)
 db.init_app(app)
 with app.app_context():

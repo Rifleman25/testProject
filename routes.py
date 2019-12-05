@@ -2,6 +2,7 @@ from flask import Blueprint, jsonify
 
 from models import Men, db
 
+index = Blueprint('index', __name__, url_prefix='/')
 api = Blueprint('api', __name__, url_prefix='/api')
 
 
@@ -21,3 +22,18 @@ def set_men(men_name):
     db.session.add(Men(name=men_name))
     db.session.commit()
     return 'done'
+
+
+@index.route('/')
+@index.route('/index')
+def get_index():
+    return '''
+            <html>
+                <title>
+                        Супер крутой веб-сервис
+                </title>
+                <body>
+                    <a href="/api/mens">Mens</a>
+                </body
+            </html
+        '''
