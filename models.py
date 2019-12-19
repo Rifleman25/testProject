@@ -40,7 +40,7 @@ class Person(db.Model):
     update_date = db.Column(db.DateTime(timezone=True), onupdate=func.now())
 
     def json(self):
-        return {"item_id": self.item_id, "name": self.name, "surname": self.surname, "birthday": self.birthday, "create_date": self.create_date, "update_date": self.update_date, }
+        return {"item_id": self.item_id, "name": self.name, "surname": self.surname, "create_date": self.create_date, "update_date": self.update_date, }
 
 
 class RequestType(db.Model):
