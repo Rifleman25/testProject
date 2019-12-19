@@ -35,9 +35,6 @@ class Person(db.Model):
     item_id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120))
     surname = db.Column(db.String(120))
-    birthday = db.Column(db.Date)
-    create_date = db.Column(db.DateTime(timezone=True), server_default=func.now())
-    update_date = db.Column(db.DateTime(timezone=True), onupdate=func.now())
 
     def json(self):
         return {"item_id": self.item_id, "name": self.name, "surname": self.surname}

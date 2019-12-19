@@ -33,9 +33,9 @@ with app.app_context():
     db.session.add(completed)
 
     #Получатели услуг
-    anton = Person(name='Anton', surname='Istomin', birthday=datetime.date(1987, 6, 25))
-    stas = Person(name='Станислав', surname='Тифакин', birthday=datetime.date(1991, 2, 7))
-    sergey = Person(name='Сергей', surname='Иванов', birthday=datetime.date(1987, 11, 20))
+    anton = Person(name='Anton', surname='Istomin')
+    stas = Person(name='Станислав', surname='Тифакин')
+    sergey = Person(name='Сергей', surname='Иванов')
 
     db.session.add(anton)
     db.session.add(stas)
