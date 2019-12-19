@@ -39,8 +39,8 @@ def getRequestTypes():
 def getRequestStatuses():
     return jsonify([(lambda status: status.json())(status) for status in RequestStatus.query.all()])
 
-@index.route('/persons/add/reg_num/<string:reg_num>/typeId/<int:typeId>/statusId/<int:statusId>/personId/<int:personId>')
-def addRequest(reg_num, typeId, statusId, personId):
+@index.route('/request/add/reg_num/<string:reg_num>/typeId/<int:typeId>/statusId/<int:statusId>/personId/<int:personId>')
+def addRequestFull(reg_num, typeId, statusId, personId):
     newrequest = Request(reg_num=reg_num, request_type_item_id=typeId, request_status_item_id=statusId, person_item_id = personId)
     db.session.add(newrequest)
     db.session.commit()
